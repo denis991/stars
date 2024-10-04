@@ -1,4 +1,5 @@
-#en
+# en
+
 Star Rating Component
 
 This project is a simple star rating component created with HTML, CSS, and JavaScript. It allows users to dynamically select and display a star rating from 1 to 5 stars.
@@ -20,7 +21,8 @@ Example:
 The updateStars() function is used to set the number of active stars, and ratingSelector is the dropdown menu that allows users to select from 1 to 5 stars.
 Project Structure
 
-#es
+# es
+
 Componente de Calificación de Estrellas
 
 Este proyecto es un componente de calificación de estrellas simple creado con HTML, CSS y JavaScript. Permite a los usuarios seleccionar y mostrar dinámicamente una calificación de 1 a 5 estrellas.
@@ -42,10 +44,8 @@ Ejemplo:
 La función updateStars() se utiliza para establecer el número de estrellas activas, y ratingSelector es el menú desplegable que permite a los usuarios seleccionar de 1 a 5 estrellas.
 Estructura del Proyecto
 
+# ru
 
-
-
-#ru
 # Star Rating Component
 
 Это простой компонент для динамического отображения звёзд (рейтинга) с возможностью выбора количества звёзд. Компонент написан на чистом HTML, CSS и JavaScript, и его можно легко интегрировать в любой проект.
