@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Оценка звездами</title>
+		<style>
+			.stars {
+				display: flex;
+				margin-bottom: 10px;
+			}
+
+			.star {
+				width: 24px;
+				height: 24px;
+				margin-right: 5px;
+			}
+
+			.star.active path {
+				fill: #f0c016;
+				stroke: #f0c016;
+			}
+
+			.star.inactive path {
+				fill: #f5f5f5;
+				stroke: #f0c016;
+			}
+
+			select {
+				margin-top: 10px;
+				padding: 5px;
+				font-size: 16px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="stars" id="stars">
+			<div class="star inactive" data-value="1">
+				<!-- SVG звезды -->
+				<svg
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"
+						stroke="#F0C016"
+					/>
+				</svg>
+			</div>
+			<div class="star inactive" data-value="2">
+				<svg
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"
+						stroke="#F0C016"
+					/>
+				</svg>
+			</div>
+			<div class="star inactive" data-value="3">
+				<svg
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"
+						stroke="#F0C016"
+					/>
+				</svg>
+			</div>
+			<div class="star inactive" data-value="4">
+				<svg
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"
+						stroke="#F0C016"
+					/>
+				</svg>
+			</div>
+			<div class="star inactive" data-value="5">
+				<svg
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"
+						stroke="#F0C016"
+					/>
+				</svg>
+			</div>
+		</div>
+
+		<!-- Селектор для выбора количества звёзд -->
+		<select id="ratingSelector">
+			<option value="1">1 звезда</option>
+			<option value="2">2 звезды</option>
+			<option value="3">3 звезды</option>
+			<option value="4">4 звезды</option>
+			<option value="5">5 звёзд</option>
+		</select>
+
+		<script>
+			const stars = document.getElementById('stars').children;
+			const ratingSelector = document.getElementById('ratingSelector');
+
+			// Функция для обновления количества активных звёзд
+			function updateStars(rating) {
+				// Сбрасываем все звёзды к неактивным
+				for (let i = 0; i < stars.length; i++) {
+					stars[i].classList.remove('active');
+					stars[i].classList.add('inactive');
+				}
+
+				// Активируем звёзды на основе рейтинга
+				for (let i = 0; i < rating; i++) {
+					stars[i].classList.remove('inactive');
+					stars[i].classList.add('active');
+				}
+			}
+
+			// Обработчик изменения селектора
+			ratingSelector.addEventListener('change', function () {
+				const selectedRating = parseInt(this.value);
+				updateStars(selectedRating);
+			});
+
+			// Пример: по умолчанию устанавливаем 3 звезды
+			const defaultRating = 3;
+			ratingSelector.value = defaultRating;
+			updateStars(defaultRating);
+		</script>
+	</body>
+</html>
